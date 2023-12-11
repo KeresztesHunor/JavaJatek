@@ -69,7 +69,7 @@ public class Karakter
         return d6(1);
     }
     
-    private static int d6(final int n)
+    private static int d6(int n)
     {
         int eredmeny = 0;
         for (int i = 0; i < n; i++)
