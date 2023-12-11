@@ -64,6 +64,53 @@ public class Karakter
         }
     }
     
+    public void hasznal(String targyNev)
+    {
+        hasznal(targyNev, 1);
+    }
+    
+    public void hasznal(String targyNev, int db)
+    {
+        hasznal(targyNev, db, false);
+    }
+    
+    public void hasznal(String targyNev, int db, boolean mindenkeppHasznal)
+    {
+        int hanyIlyenNevuTargy = 0;
+        for (Targy targy : felszereles)
+        {
+            if (targy.getNev().compareTo(targyNev) == 0)
+            {
+                hanyIlyenNevuTargy++;
+            }
+        }
+        if (hanyIlyenNevuTargy > 0)
+        {
+            if (hanyIlyenNevuTargy >= db || mindenkeppHasznal)
+            {
+                int i = felszereles.size() - 1;
+                int hanyatHasznalt = 0;
+                while (i >= 0 && hanyatHasznalt < db)
+                {
+                    if (felszereles.get(i--).getNev().compareTo(targyNev) == 0)
+                    {
+                        felszereles.remove(i--);
+                        hanyatHasznalt++;
+                    }
+                }
+                System.out.printf("Elhasznált tárgy(ak): %ddb %s\n", db, targyNev);
+            }
+            else
+            {
+                System.out.println("Nincs elég ilyen tárgy a felszerelésben!");
+            }
+        }
+        else
+        {
+            System.out.println("Nincs ilyen tárgy a felszerelésben!");
+        }
+    }
+    
     private static int d6()
     {
         return d6(1);
