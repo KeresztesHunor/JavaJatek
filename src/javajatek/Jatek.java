@@ -21,7 +21,7 @@ public class Jatek
     
     public void elment()
     {
-        try(ObjectOutputStream objKi= new ObjectOutputStream(new FileOutputStream("karakterek.bin")))
+        try(ObjectOutputStream objKi = new ObjectOutputStream(new FileOutputStream("karakterek.bin")))
         {
             objKi.writeObject(karakterek);
         }
@@ -37,7 +37,7 @@ public class Jatek
     
     public void betolt()
     {
-        try(ObjectInputStream objBe= new ObjectInputStream(new FileInputStream("karakterek.bin")))
+        try(ObjectInputStream objBe = new ObjectInputStream(new FileInputStream("karakterek.bin")))
         {
             karakterek = (Karakter[])objBe.readObject();
         }
