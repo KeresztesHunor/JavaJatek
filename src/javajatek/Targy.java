@@ -33,6 +33,6 @@ public class Targy
 
     @Override public String toString()
     {
-        return nev + ":\n" + leiras + "\n";
+        return "id: " + id + "\n" + nev + ":\n" + leiras + "\n";
     }
 }
