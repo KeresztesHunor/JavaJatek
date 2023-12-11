@@ -1,9 +1,10 @@
 package javajatek;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Karakter
+public class Karakter implements Serializable
 {
     private final ArrayList<Targy> felszereles;
     
@@ -92,13 +93,14 @@ public class Karakter
                 int hanyatHasznalt = 0;
                 while (i >= 0 && hanyatHasznalt < db)
                 {
-                    if (felszereles.get(i--).getNev().compareTo(targyNev) == 0)
+                    if (felszereles.get(i).getNev().compareTo(targyNev) == 0)
                     {
                         felszereles.remove(i--);
                         hanyatHasznalt++;
                     }
+                    i--;
                 }
-                System.out.printf("Elhasznált tárgy(ak): %ddb %s\n", db, targyNev);
+                System.out.printf("Elhasznált tárgy(ak): %ddb %s\n", hanyatHasznalt, targyNev);
             }
             else
             {
