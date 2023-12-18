@@ -11,7 +11,12 @@ public class MainForm extends javax.swing.JFrame
         jButton2.setText(helyszin.egyikBtnText());
         jTextArea1.insert(helyszin.leiras() + '\n', 0);
         jTextArea1.setCaretPosition(0);
-        jButton1.setVisible(false);
+        final boolean vanMasikIrany = helyszin instanceof MasikIrany;
+        jButton1.setVisible(vanMasikIrany);
+        if (vanMasikIrany)
+        {
+            jButton1.setText(((MasikIrany)helyszin).masikBtnText());
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -81,10 +86,25 @@ public class MainForm extends javax.swing.JFrame
         jButton2.setText(helyszin.egyikBtnText());
         jTextArea1.insert(helyszin.leiras() + '\n', 0);
         jTextArea1.setCaretPosition(0);
+        final boolean vanMasikIrany = helyszin instanceof MasikIrany;
+        jButton1.setVisible(vanMasikIrany);
+        if (vanMasikIrany)
+        {
+            jButton1.setText(((MasikIrany)helyszin).masikBtnText());
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        helyszin = ((MasikIrany)helyszin).masikIrany();
+        jButton2.setText(helyszin.egyikBtnText());
+        jTextArea1.insert(helyszin.leiras() + '\n', 0);
+        jTextArea1.setCaretPosition(0);
+        final boolean vanMasikIrany = helyszin instanceof MasikIrany;
+        jButton1.setVisible(vanMasikIrany);
+        if (vanMasikIrany)
+        {
+            jButton1.setText(((MasikIrany)helyszin).masikBtnText());
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[])

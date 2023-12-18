@@ -1,10 +1,10 @@
 package javajatek;
 
-public class Balra extends Helyszin
+public class Jobbra extends Helyszin
 {
     @Override public String leiras()
     {
-        return "Ez van balra";
+        return "Ez van jobbra";
     }
 
     @Override public String egyikBtnText()
