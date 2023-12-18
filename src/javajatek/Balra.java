@@ -1,19 +1,19 @@
 package javajatek;
 
-public class Kezdes extends Helyszin
+public class Balra extends Helyszin
 {
     @Override public String leiras()
     {
-        return "Ez a kezdés. Jobbra, vagy balra?";
+        return "Ez balra van";
     }
-    
+
     @Override public String egyikBtnText()
     {
-        return "Balra";
+        return "???";
     }
 
     @Override public Helyszin egyikIrany()
     {
-        return new Balra();
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
